@@ -36,9 +36,11 @@ class _HomeShellState extends State<HomeShell> {
     final String title = _titles[_index];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: _index == 0
+          ? null
+          : AppBar(
+              title: Text(title),
+            ),
       body: IndexedStack(
         index: _index,
         children: _tabs,
